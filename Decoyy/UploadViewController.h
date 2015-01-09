@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  UploadViewController.h
 //  Decoyy
 //
 //  Created by Andrew Liu on 1/8/15.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface UploadViewController : UIViewController
+@property NSMutableArray *array;
 
 @end
-
