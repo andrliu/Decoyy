@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49693A231A64737800815C90 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49693A221A64737800815C90 /* CustomCollectionViewCell.m */; };
 		496B52911A5F369400EAA25C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 496B52901A5F369400EAA25C /* User.m */; };
 		496B52941A5F426000EAA25C /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 496B52931A5F426000EAA25C /* Tag.m */; };
 		49B3F9D41A5F0D1700518766 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B3F9D31A5F0D1700518766 /* main.m */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49693A211A64737800815C90 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		49693A221A64737800815C90 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
 		496B528F1A5F369400EAA25C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		496B52901A5F369400EAA25C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		496B52921A5F426000EAA25C /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				49B3F9FB1A5F0EA600518766 /* ImageViewController.m */,
 				49B3F9FD1A5F0EB400518766 /* WebViewController.h */,
 				49B3F9FE1A5F0EB400518766 /* WebViewController.m */,
+				49693A211A64737800815C90 /* CustomCollectionViewCell.h */,
+				49693A221A64737800815C90 /* CustomCollectionViewCell.m */,
 				49B3FA001A5F11A100518766 /* Product.h */,
 				49B3FA011A5F11A100518766 /* Product.m */,
 				496B528F1A5F369400EAA25C /* User.h */,
@@ -256,6 +261,7 @@
 				49B3F9FC1A5F0EA600518766 /* ImageViewController.m in Sources */,
 				496B52911A5F369400EAA25C /* User.m in Sources */,
 				49B3F9FF1A5F0EB400518766 /* WebViewController.m in Sources */,
+				49693A231A64737800815C90 /* CustomCollectionViewCell.m in Sources */,
 				496B52941A5F426000EAA25C /* Tag.m in Sources */,
 				49B3F9DA1A5F0D1700518766 /* Decoyy.xcdatamodeld in Sources */,
 				49B3F9D71A5F0D1700518766 /* AppDelegate.m in Sources */,

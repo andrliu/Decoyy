@@ -7,16 +7,17 @@
 //
 
 #import "RootViewController.h"
+#import "CustomCollectionViewCell.h"
 #import "ImageViewController.h"
 #import "UploadViewController.h"
 #import "Product.h"
 #import "User.h"
 @import CoreLocation;
 
-@interface RootViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface RootViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property NSMutableArray *arrayOfProducts;
 @property NSArray *arrayOfUsers;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property Product *product1;
 @property Product *product2;
 
@@ -60,28 +61,33 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.tableView reloadData];
+    [self.collectionView reloadData];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.arrayOfProducts.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    Product *product = self.arrayOfProducts[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ (%d meters)",product.name, product.distance];
-    cell.detailTextLabel.text = product.address;
+    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    Product *product = self.arrayOfProducts[indexPath.item];
+//    cell.textLabel.text = [NSString stringWithFormat:@"%@ (%d meters)",product.name, product.distance];
+//    cell.detailTextLabel.text = product.address;
     cell.imageView.image = product.image;
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    Product *product = self.arrayOfProducts[indexPath.row];
+    Product *product = self.arrayOfProducts[indexPath.item];
     [self performSegueWithIdentifier:@"Product" sender:product];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(self.collectionView.frame.size.width, self.collectionView.frame.size.height);
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -100,13 +106,13 @@
 - (IBAction)sortByUserA:(UIButton *)sender
 {
     [self sortProductWithUser:self.arrayOfUsers[0]];
-    [self.tableView reloadData];
+    [self.collectionView reloadData];
 }
 
 - (IBAction)sortByUserB:(UIButton *)sender
 {
     [self sortProductWithUser:self.arrayOfUsers[1]];
-    [self.tableView reloadData];
+    [self.collectionView reloadData];
 }
 
 @end
