@@ -21,7 +21,6 @@
 @property Product *product1;
 @property Product *product2;
 
-
 @end
 
 @implementation RootViewController
@@ -48,13 +47,11 @@
                                  {
                                      return (NSComparisonResult)NSOrderedAscending;
                                  }
-                                 
                                  if (obj1.distance > obj2.distance)
                                  {
                                      return (NSComparisonResult)NSOrderedDescending;
                                  }
                                  return (NSComparisonResult)NSOrderedSame;
-                                 
                              }] mutableCopy];
 }
 
@@ -75,6 +72,7 @@
     Product *product = self.arrayOfProducts[indexPath.item];
 //    cell.textLabel.text = [NSString stringWithFormat:@"%@ (%d meters)",product.name, product.distance];
 //    cell.detailTextLabel.text = product.address;
+    self.navigationItem.title = product.name;
     cell.imageView.image = product.image;
     return cell;
 }
